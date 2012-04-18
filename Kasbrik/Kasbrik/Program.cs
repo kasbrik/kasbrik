@@ -10,7 +10,7 @@ namespace Kasbrik
         /// </summary>
         static void Main(string[] args)
         {
-            using (Game1 game = new Game1())
+            using (KasbrikGame game = new KasbrikGame())
             {
                 game.Run();
             }

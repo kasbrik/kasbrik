@@ -14,12 +14,12 @@ namespace Kasbrik
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class Game1 : Microsoft.Xna.Framework.Game
+    public class KasbrikGame : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        public Game1()
+        public KasbrikGame()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -34,6 +34,7 @@ namespace Kasbrik
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            this.Components.Add(new Components.KeyboardManager(this));
 
             base.Initialize();
         }
