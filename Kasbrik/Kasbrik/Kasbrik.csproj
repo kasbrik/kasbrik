@@ -107,9 +107,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\KeyboardManager.cs" />
+    <Compile Include="Entities\Ball.cs" />
+    <Compile Include="Entities\Brick.cs" />
+    <Compile Include="Entities\Level.cs" />
+    <Compile Include="Entities\Paddle.cs" />
+    <Compile Include="GameExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Game1.cs" />
+    <Compile Include="KasbrikGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

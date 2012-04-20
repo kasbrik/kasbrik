@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using Kasbrik.Entities;
 
 namespace Kasbrik
 {
@@ -16,8 +17,8 @@ namespace Kasbrik
     /// </summary>
     public class KasbrikGame : Microsoft.Xna.Framework.Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
 
         public KasbrikGame()
         {
@@ -33,8 +34,9 @@ namespace Kasbrik
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            // Controller components
             this.Components.Add(new Components.KeyboardManager(this));
+            this.Components.Add(new Level(this));
 
             base.Initialize();
         }
@@ -49,6 +51,7 @@ namespace Kasbrik
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            base.LoadContent();
         }
 
         /// <summary>
