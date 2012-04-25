@@ -39,12 +39,6 @@ namespace Kasbrik.Entities
         internal void HandleBallCollision(Ball ball)
         {
             float distX, distY;
-
-            if (ball.X > this.X && ball.X + Ball.Width < this.X + Brick.Width)
-            {
-                ball.Velocity = new Vector2(ball.Velocity.X, -ball.Velocity.Y);
-                return;
-            }
             
             if (ball.Velocity.X > 0)
             {
@@ -78,9 +72,9 @@ namespace Kasbrik.Entities
             }
 
             if (distX > distY)
-                ball.Velocity = new Vector2(-ball.Velocity.X, ball.Velocity.Y);
-            else
                 ball.Velocity = new Vector2(ball.Velocity.X, -ball.Velocity.Y);
+            else
+                ball.Velocity = new Vector2(-ball.Velocity.X, ball.Velocity.Y);
         }
     }
 }
