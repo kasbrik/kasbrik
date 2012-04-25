@@ -70,5 +70,18 @@ namespace Kasbrik.Entities
 
             this.Velocity = newVelocity;
         }
+
+        internal bool CollidesWith(Ball ball)
+        {
+            Rectangle ballRect = new Rectangle((int)ball.X, (int)ball.Y, Ball.Width, Ball.Height);
+            Rectangle myRect = new Rectangle((int)this.X, (int)this.Y, Paddle.Width, Paddle.Height);
+
+            return ballRect.Intersects(myRect);
+        }
+
+        internal void HandleBallCollision(Ball ball)
+        {
+            ball.Velocity = new Vector2(ball.Velocity.X, -ball.Velocity.Y);
+        }
     }
 }

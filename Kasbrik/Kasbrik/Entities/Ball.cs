@@ -24,7 +24,7 @@ namespace Kasbrik.Entities
             get { return new Vector2(this.X, this.Y); }
         }
 
-        public Vector2 Velocity { get; private set; }
+        public Vector2 Velocity { get; set; }
 
         private Level Level { get; set; }
 
