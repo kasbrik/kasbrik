@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kasbrik", "Kasbrik\Kasbrik\Kasbrik.csproj", "{B75B9281-560C-4ABF-9B72-48AC94E28121}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "KasbrikContent", "Kasbrik\KasbrikContent\KasbrikContent.contentproj", "{338918AC-E2FE-420F-9DBB-BEC779EA64EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KasbrikContent", "Kasbrik\KasbrikContent\KasbrikContent.contentproj", "{338918AC-E2FE-420F-9DBB-BEC779EA64EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameLib.Events", "GameLib.Events\GameLib.Events.csproj", "{C3B5B959-1A1D-4F09-9362-756A8A0F67AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +19,10 @@ Global
 		{B75B9281-560C-4ABF-9B72-48AC94E28121}.Release|x86.Build.0 = Release|x86
 		{338918AC-E2FE-420F-9DBB-BEC779EA64EA}.Debug|x86.ActiveCfg = Debug|x86
 		{338918AC-E2FE-420F-9DBB-BEC779EA64EA}.Release|x86.ActiveCfg = Release|x86
+		{C3B5B959-1A1D-4F09-9362-756A8A0F67AC}.Debug|x86.ActiveCfg = Debug|x86
+		{C3B5B959-1A1D-4F09-9362-756A8A0F67AC}.Debug|x86.Build.0 = Debug|x86
+		{C3B5B959-1A1D-4F09-9362-756A8A0F67AC}.Release|x86.ActiveCfg = Release|x86
+		{C3B5B959-1A1D-4F09-9362-756A8A0F67AC}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
