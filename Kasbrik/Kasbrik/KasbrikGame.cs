@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Kasbrik.Entities;
+using GameLib.Events;
 
 namespace Kasbrik
 {
@@ -34,8 +35,12 @@ namespace Kasbrik
         /// </summary>
         protected override void Initialize()
         {
+            // Event aggregator
+            this.Services.AddService(typeof(IEventAggregator), new EventAggregator());
+
             // Controller components
             this.Components.Add(new Components.KeyboardManager(this));
+            this.Components.Add(new Components.ScoreComponent(this));
             this.Components.Add(new Level(this));
 
             base.Initialize();

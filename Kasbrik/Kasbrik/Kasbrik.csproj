@@ -108,8 +108,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\KeyboardManager.cs" />
+    <Compile Include="Components\ScoreComponent.cs" />
     <Compile Include="Entities\Ball.cs" />
     <Compile Include="Entities\Brick.cs" />
+    <Compile Include="Entities\BrickDestroyedEvent.cs" />
     <Compile Include="Entities\Level.cs" />
     <Compile Include="Entities\Paddle.cs" />
     <Compile Include="GameExtensions.cs" />
@@ -122,6 +124,10 @@
     <Content Include="GameThumbnail.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\GameLib.Events\GameLib.Events.csproj">
+      <Project>{C3B5B959-1A1D-4F09-9362-756A8A0F67AC}</Project>
+      <Name>GameLib.Events</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KasbrikContent\KasbrikContent.contentproj">
       <Name>KasbrikContent</Name>
       <XnaReferenceType>Content</XnaReferenceType>

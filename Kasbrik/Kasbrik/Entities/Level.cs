@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using GameLib.Events;
 
 namespace Kasbrik.Entities
 {
@@ -15,6 +16,8 @@ namespace Kasbrik.Entities
         public Paddle Paddle { get; private set; }
         public List<Brick> Bricks { get; private set; }
         public List<Ball> Balls { get; private set; }
+
+        public IEventAggregator EventAggregator { get; private set; }
 
         private SpriteBatch spriteBatch;
 
@@ -44,6 +47,9 @@ namespace Kasbrik.Entities
         protected override void LoadContent()
         {
             base.LoadContent();
+
+            // Get reference to event aggregator
+            this.EventAggregator = this.Game.Services.GetService<IEventAggregator>();
 
             // Get spritebatch instance
             this.spriteBatch = new SpriteBatch(this.Game.GraphicsDevice);
@@ -85,6 +91,8 @@ namespace Kasbrik.Entities
                 {
                     // Rebound and remove brick
                     brick.HandleBallCollision(ball);
+                    if (this.EventAggregator != null)
+                        this.EventAggregator.Publish(new BrickDestroyedEvent(brick));
                     this.Bricks.Remove(brick);
                     break;
                 }
